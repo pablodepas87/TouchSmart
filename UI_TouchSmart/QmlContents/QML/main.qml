@@ -15,37 +15,39 @@ ApplicationWindow {
 
         id:item
         anchors.fill: parent
-        signal pippo(int val)
 
-        property int capitolo: 0
 
         Loader {
 
           id:loader
+          state:"page1"
+          states: [
+              State {
+                  name: "page1"
+                  when: item.capitolo==0
+                  PropertyChanges { target: loader; sourceComponent: page1 }
 
+              },
+              State {
+                  name: "page2"
+                  when: item.capitolo==1
+                  PropertyChanges {
+                      target: loader
+                      sourceComponent: page2
+
+                  }
+              }
+          ]
         }
-
-        states: [
-            State {
-                name: "page1"
-                when: item.capitolo==0
-                PropertyChanges { target: loader; sourceComponent: page1 }
-
-            },
-            State {
-                name: "page2"
-                when: item.capitolo==1
-                PropertyChanges {
-                    target: loader
-                    sourceComponent: page2
-
-                }
-            }
-        ]
 
         Component {
             id:page1
-            Page1{}
+            Page1{
+            onPremuto: {
+               loader.state="page2"
+
+            }
+         }
 
         }
         Component {
