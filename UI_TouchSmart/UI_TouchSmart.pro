@@ -24,6 +24,7 @@ RESOURCES += $$files(QmlContents/Traduzioni/*.*) \
             $$files(QmlContents/Images/*.*) \
             $$files(QmlContents/QML/*.qml)\
             $$files(QmlContents/QML/MainPages/*.qml)
+            $$files(QmlContents/QML/OggettiGlobali/*.qml)
 
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
