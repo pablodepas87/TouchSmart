@@ -3,6 +3,7 @@
 #include <QQmlContext>
 #include "gestionepagine.h"
 #include "timezone.h"
+#include "parametriutente.h"
 
 int main(int argc, char *argv[])
 {

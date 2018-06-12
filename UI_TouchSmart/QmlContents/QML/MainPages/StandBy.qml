@@ -4,14 +4,14 @@ import QtQuick.Controls 2.0
 
 Page{
 
-  width:600
+  width:800
   height: 480
 
   signal premuto(int val)
-  signal fake
+
   background: Rectangle{
 
-      color: "red"
+      color: "transparent"
 
   }
 

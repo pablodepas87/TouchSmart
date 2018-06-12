@@ -21,9 +21,9 @@ HEADERS += $$files(librerieC/*.h) \
 RESOURCES += $$files(QmlContents/Traduzioni/*.*) \
             $$files(QmlContents/Font/*.*) \
             $$files(QmlContents/JS/*.*) \
-            $$files(QmlContents/Images/*.*) \
+            $$files(QmlContents/Images/Generiche/*.*) \
             $$files(QmlContents/QML/*.qml)\
-            $$files(QmlContents/QML/MainPages/*.qml)
+            $$files(QmlContents/QML/MainPages/*.qml)\
             $$files(QmlContents/QML/OggettiGlobali/*.qml)
 
 
@@ -37,3 +37,10 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../ParametriUtente/release/ -lParametriUtente
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../ParametriUtente/debug/ -lParametriUtente
+else:unix: LIBS += -L$$OUT_PWD/../ParametriUtente/ -lParametriUtente
+
+INCLUDEPATH += $$PWD/../ParametriUtente
+DEPENDPATH += $$PWD/../ParametriUtente

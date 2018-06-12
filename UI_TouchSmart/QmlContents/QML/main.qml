@@ -2,16 +2,17 @@ import QtQuick 2.7
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
 import "MainPages"
+import "OggettiGlobali"
 
 
 ApplicationWindow {
 
 
     visible: true
-    width: 800
-    height: 480
+    width: 480
+    height: 800
     title: qsTr("Hello World")
-    background:
+    background: Sfondo{ objBackImg.source: "qrc:/QmlContents/Images/Generiche/sfondo.png"}
     Item {
 
         id:item

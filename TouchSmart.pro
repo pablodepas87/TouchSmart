@@ -2,7 +2,9 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     UI_TouchSmart \
-    ParametriSotterranei
+    ParametriSotterranei \
+    ParametriUtente
+
 
 
 TRANSLATIONS +=\
@@ -10,3 +12,4 @@ TRANSLATIONS +=\
 
 CONFIG *= c++14
 
+UI_TouchSmart.depends = ParametriUtente
