@@ -21,12 +21,12 @@ ApplicationWindow {
         Loader {
 
           id:loader
-          state:"page1"
+          state:"standby"
           states: [
               State {
-                  name: "page1"
+                  name: "standby"
                   when: gestorePagine.capitolo===0
-                  PropertyChanges { target: loader; sourceComponent: page1 }
+                  PropertyChanges { target: loader; sourceComponent: standby }
               },
               State {
                   name: "page2"
@@ -36,8 +36,8 @@ ApplicationWindow {
           ]
         }
         Component {
-            id:page1
-            Page1 {
+            id:standby
+            StandBy {
               onPremuto: { gestorePagine.capitolo=1 }
             }
         }
@@ -46,12 +46,6 @@ ApplicationWindow {
             Page2{}
         }
 
-        Connections{
 
-          target: timeZone
-          onDateTimeChanged: {
-
-          }
-        }
     }
 }

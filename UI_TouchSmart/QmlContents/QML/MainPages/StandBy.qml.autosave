@@ -188,6 +188,8 @@ Page{
         source: "qrc:/QmlContents/Images/Standby/logo_tagliavini.png"
 
     }
+    
+    
 
 
 }
