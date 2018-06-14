@@ -23,6 +23,8 @@ RESOURCES += $$files(QmlContents/Traduzioni/*.*) \
             $$files(QmlContents/JS/*.*) \
             $$files(QmlContents/Images/Generiche/*.*) \
             $$files(QmlContents/Images/Standby/*.*) \
+            $$files(QmlContents/Images/IconeBottoneArancio/*.*) \
+            $$files(QmlContents/Images/Home/*.*) \
             $$files(QmlContents/QML/*.qml)\
             $$files(QmlContents/QML/MainPages/*.qml)\
             $$files(QmlContents/QML/OggettiGlobali/*.qml)

@@ -182,12 +182,21 @@ Page{
     }
    //  logo tagliavini
     Image{
-
-        anchors.top: boxProxAccensione.bottom ; anchors.topMargin: parent.height*0.05
+        id:logo
+        anchors.top: boxProxAccensione.bottom ; anchors.topMargin: parent.height*0.02
         anchors.horizontalCenter: parent.horizontalCenter
         source: "qrc:/QmlContents/Images/Standby/logo_tagliavini.png"
 
     }
+   // bottoner power
+   BottoneArancio{
+     anchors.horizontalCenter: parent.horizontalCenter
+     anchors.top: logo.bottom ; anchors.topMargin: parent.height * 0.03
+     state:"powerOff"
+     onPowerOff: close()
+   }
+
+
 
 
 }
