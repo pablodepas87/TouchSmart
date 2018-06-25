@@ -1,0 +1,55 @@
+import QtQuick 2.7
+import QtQuick.Controls 2.0
+import "../OggettiGlobali"
+import "../OggettiHomePage"
+import QtQuick.Layouts 1.3
+
+Page{
+
+    width:480
+    height: 800
+
+    //signal premuto(int val)
+
+    background: Sfondo{ objBackImg.source: define.pathBckg }
+
+    header: Intestazione {
+        objIconaPag.source:  "qrc:/QmlContents/Images/IconeBottoneArancio/ricette.png"
+        objTitPag.text: stringhe.titoloMan
+        objNumPag.visible: true
+        Component.onCompleted: print(width)
+    }
+
+
+
+    RigaBoxSetPoint{
+
+      id:rowSet
+      anchors.horizontalCenter: parent.horizontalCenter
+
+
+    }
+
+
+    // bottoner power
+    BottoneArancio{
+        y: 515
+        anchors.horizontalCenterOffset: 158
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: logo.bottom ; anchors.topMargin: parent.height * 0.03
+        state:"startTimer"
+
+    }
+
+    // bottoner power
+    BottoneArancio{
+        y: 515
+        anchors.horizontalCenterOffset: -117
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: logo.bottom ; anchors.topMargin: parent.height * 0.03
+        state:"powerOff"
+        onPowerOffOn:  gestorePagine.capitolo = define.mainPages.standBy
+    }
+
+
+}

@@ -12,39 +12,50 @@ ApplicationWindow {
     width: 480
     height: 800
     title: qsTr("Hello World")
-    background: Sfondo{ objBackImg.source: "qrc:/QmlContents/Images/Generiche/sfondo.png"}
+
     Item {
 
         id:item
         anchors.fill: parent
 
-        Loader {
+       VarGlobali {id: define }
+       Stringhe {id: stringhe}
+       Loader {
 
-          id:loader
-          state:"standby"
-          states: [
-              State {
-                  name: "standby"
-                  when: gestorePagine.capitolo===0
-                  PropertyChanges { target: loader; sourceComponent: standby }
-              },
-              State {
-                  name: "page2"
-                  when: gestorePagine.capitolo===1
-                  PropertyChanges { target: loader ; sourceComponent: page2 }
-              }
-          ]
-        }
-        Component {
-            id:standby
-            StandBy {
-              onPremuto: { gestorePagine.capitolo=1 }
-            }
-        }
-        Component {
-            id:page2
-            Page2{}
-        }
+           id:loader
+           state:"standby"
+           states: [
+               State {
+                   name: "standby"
+                   when: gestorePagine.capitolo === define.mainPages.standBy
+                   PropertyChanges { target: loader; sourceComponent: standby }
+               },
+               State {
+                   name: "introduzione"
+                   when: gestorePagine.capitolo === define.mainPages.introduzione
+                   PropertyChanges { target: loader ; sourceComponent: introduzione }
+               },
+               State {
+                   name: "homepage"
+                   when: gestorePagine.capitolo === define.mainPages.homepage
+                   PropertyChanges { target: loader ; sourceComponent: homepage }
+               }
+           ]
+       }
+       Component {
+           id:standby
+           StandBy {
+               //onPremuto: { gestorePagine.capitolo=1 }
+           }
+       }
+       Component {
+           id: introduzione
+           PgIntroduzione{}
+       }
+       Component{
+           id:  homepage
+           PgHome{}
+       }
 
 
     }

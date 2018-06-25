@@ -7,11 +7,9 @@ Page{
     width:480
     height: 800
 
-    signal premuto(int val)
+    //signal premuto(int val)
 
-    background: Rectangle{
-        color: "transparent"
-    }
+    background: Sfondo{ objBackImg.source: define.pathBckg }
 
     header: Intestazione {
 
@@ -188,13 +186,13 @@ Page{
         source: "qrc:/QmlContents/Images/Standby/logo_tagliavini.png"
 
     }
-   // bottoner power
-   BottoneArancio{
-     anchors.horizontalCenter: parent.horizontalCenter
-     anchors.top: logo.bottom ; anchors.topMargin: parent.height * 0.03
-     state:"powerOff"
-     onPowerOff: close()
-   }
+    // bottoner power
+    BottoneArancio{
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: logo.bottom ; anchors.topMargin: parent.height * 0.03
+        state:"powerOff"
+        onPowerOffOn:  gestorePagine.capitolo = define.mainPages.introduzione
+    }
 
 
 

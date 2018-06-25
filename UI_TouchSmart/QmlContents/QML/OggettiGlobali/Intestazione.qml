@@ -15,32 +15,31 @@ Item {
     Image{
 
        id: headerBckg
-       width:460
-       height: 65
+      // width:460
+      // height: 65
        anchors.verticalCenter: parent.verticalCenter
        source: "qrc:/QmlContents/Images/Generiche/sfondo-top.png"
        anchors.horizontalCenter: parent.horizontalCenter
 
        Image {
            id: imgIcoPagina
-           width: 53
-           height: 51
-           anchors.left: parent.left
-           anchors.leftMargin: 10
+           width: 65
+           height: 65
+           anchors.left:   parent.left;     anchors.leftMargin: 10
+           anchors.bottom: parent.bottom ; anchors.bottomMargin: parent.height* 0.01
            source: ""
-
-
        }
 
        Text {
            id: txtNumPagina
            text: qsTr("Pag. %1").arg(numeroPag)
-           anchors.bottom: imgIcoPagina.bottom
-           anchors.bottomMargin: 0
+           anchors.bottom: parent.bottom ; anchors.bottomMargin: parent.height* 0.07
            anchors.left: imgIcoPagina.right
-           anchors.leftMargin: 10
-           font.pixelSize: 20
-           font.capitalization: Font.Capitalize
+           anchors.leftMargin: 2
+           font.pixelSize: 18
+           font.capitalization: Font.AllUppercase
+           color: "white"
+           font.weight: Font.Bold
        }
 
        Text {
@@ -58,6 +57,7 @@ Item {
            font.pixelSize: 25
            minimumPixelSize: 10
            fontSizeMode: Text.Fit
+
 
        }
 
